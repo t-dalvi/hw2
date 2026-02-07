@@ -80,11 +80,11 @@
 # TODO!
 
 if ActiveRecord::Base.connection.table_exists?('movies')
-  ActiveRecord::Base.connection.execute("DELETE FROM roles")
-  ActiveRecord::Base.connection.execute("DELETE FROM movies")
-  ActiveRecord::Base.connection.execute("DELETE FROM actors")
-  ActiveRecord::Base.connection.execute("DELETE FROM studios")
-  ActiveRecord::Base.connection.execute("DELETE FROM agents")
+  Role.destroy_all
+  Movie.destroy_all
+  Actor.destroy_all
+  Studio.destroy_all
+  Agent.destroy_all
 end
 
 # Generate models and tables, according to the domain model.
